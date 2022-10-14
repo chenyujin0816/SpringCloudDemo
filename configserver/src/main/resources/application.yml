@@ -1,5 +1,9 @@
 server:
   port: 8888
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 spring:
   application:
     name: configserver
@@ -12,7 +16,3 @@ spring:
           username: chenyujin_2000@163.com
           password: Jin19701021
       label: master
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
