@@ -1,0 +1,6 @@
+# Project exclude paths
+/eurekaclient/target/
+/eurekaserver/target/
+/feign/target/
+/hystrix/target/
+/zuul/target/
