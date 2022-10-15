@@ -7,31 +7,35 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
- * 新闻实体类
+ * 作业实体类
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("\"news\"")
-public class News implements Serializable {
-
+@TableName("\"assignment\"")
+public class Assignment implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value="id",type= IdType.AUTO)
     private Long id;//ID
 
-    private String title;//标题
+    @NotBlank(message = "作业标题不能为空")
+    private String title;//作业标题
 
-    private String content;//内容
+    private String description;//作业描述
 
-    private Long creatorId;//发布人ID
+    private Long teacherId;//教师id
 
-    private Long CourseId;
+    private Timestamp deadline;//截止时间
 
-    private Timestamp createTime;//发布时间
+    private Timestamp createTime;//布置时间
 
+    private Long courseId;
+
+    private Long week;
 }

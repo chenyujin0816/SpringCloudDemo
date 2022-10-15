@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaserver" />
-        <module name="hystrix" />
         <module name="eurekaclient" />
+        <module name="hystrix" />
         <module name="zuul" />
         <module name="configserver" />
         <module name="feign" />

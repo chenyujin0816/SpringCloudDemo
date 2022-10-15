@@ -1,7 +1,7 @@
 package cn.edu.bit.mapper;
 
-import cn.edu.bit.entity.News;
+import cn.edu.bit.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface NewsMapper extends BaseMapper<News> {
+public interface UserMapper extends BaseMapper<User> {
 }

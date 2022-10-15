@@ -7,30 +7,35 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
- * 新闻实体类
+ * 小组实体类
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("\"news\"")
-public class News implements Serializable {
+@TableName("\"group\"")
+public class Group implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value="id",type= IdType.AUTO)
     private Long id;//ID
 
-    private String title;//标题
+    @NotBlank(message = "人数不能为空")
+    private int memberCount;//人数
 
-    private String content;//内容
+    @NotBlank(message = "组名不能为空")
+    private String groupName;//小组名称
 
-    private Long creatorId;//发布人ID
+    @NotBlank(message = "隶属课程不能为空")
+    private Long courseId;//隶属课程id
 
-    private Long CourseId;
+    @NotBlank(message = "指导教师不能为空")
+    private Long teacherId;//指导教师id
 
     private Timestamp createTime;//发布时间
 

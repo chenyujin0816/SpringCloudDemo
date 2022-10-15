@@ -6,13 +6,9 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Data
-public class LoginDto implements Serializable {
+public class ChangePasswordDto implements Serializable {
 
-    //登录
-    @NotBlank(message="学号不能为空")
-    private String username;//手机号
+    private Long id;
     @NotBlank(message="密码不能为空")
     private String password;//密码
-    private char status;//状态
-    private Long id;
 }

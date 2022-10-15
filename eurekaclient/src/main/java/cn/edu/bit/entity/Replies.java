@@ -7,31 +7,29 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
- * 新闻实体类
+ * 回复实体类
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("\"news\"")
-public class News implements Serializable {
-
+@TableName("\"replies\"")
+public class Replies implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value="id",type= IdType.AUTO)
     private Long id;//ID
+    private Long fromId;//from_ID
+    private Long toId;//to_ID
 
-    private String title;//标题
-
+    @NotBlank(message = "内容不能为空")
     private String content;//内容
 
-    private Long creatorId;//发布人ID
+    private Long parentId;//从属回帖id
 
-    private Long CourseId;
-
-    private Timestamp createTime;//发布时间
-
+    private Timestamp createTime;//回帖时间
 }

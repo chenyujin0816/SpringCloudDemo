@@ -7,31 +7,18 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
-import java.sql.Timestamp;
-
-/**
- * 新闻实体类
- */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("\"news\"")
-public class News implements Serializable {
-
+@TableName("\"student_course\"")
+public class StudentCourse {
     private static final long serialVersionUID = 1L;
 
     @TableId(value="id",type= IdType.AUTO)
     private Long id;//ID
-
-    private String title;//标题
-
-    private String content;//内容
-
-    private Long creatorId;//发布人ID
-
-    private Long CourseId;
-
-    private Timestamp createTime;//发布时间
-
+    private Long courseId;//课程ID
+    private Long studentId;//学生ID
+    private int courseWeek;//周数
+    private String url;//文件
+    private int score; //评分
 }

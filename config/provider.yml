@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://120.46.212.0:26000/labms?currentSchema=public
-    username: lab_admin
+    username: dbuser
     password: "Abcd@123"
 
 mybatis-plus:
